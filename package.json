@@ -1,0 +1,25 @@
+{
+  "name": "hmr-service",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node hmr-service.js",
+    "debug": "node --inspect --debug-brk hmr-service.js",
+    "test": "mocha specs --reporter spec"
+  },
+  "engines": {
+    "node": ">=6.2.1"
+  },
+  "dependencies": {
+    "hydra": "1.0.6",
+    "fwsp-config": "1.1.5"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "eslint": "3.18.0",
+    "eslint-config-google": "0.7.1",
+    "eslint-plugin-mocha": "4.9.0",
+    "mocha": "3.2.0",
+    "superagent": "2.3.0"
+  }
+}
