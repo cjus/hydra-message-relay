@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script type='text/javascript'>
+      // Let us open a web socket
+      var ws = new WebSocket('ws://localhost:5353');
+      ws.onopen = function() {
+        console.log('Websocket opened');
+      };
+      ws.onmessage = function(evt) {
+        var msg = evt.data;
+        console.log('Message is received...', JSON.parse(msg));
+      };
+
+      ws.onclose = function() {
+        // websocket is closed.
+        console.log('Connection is closed...');
+      };
+
+      function WebSocketTest() {
+        let umf = {
+          'to': 'hmr-service:/',
+          'from': 'client:/',
+          'body': {}
+        };
+        ws.send(JSON.stringify(umf));
+        console.log('Message is sent...');
+      }
+    </script>
+</head>
+
+<body>
+    <div id='sse'>
+        <a href='javascript:WebSocketTest()'>Run WebSocket</a>
+    </div>
+</body>
+
+</html>
