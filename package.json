@@ -1,6 +1,6 @@
 {
   "name": "hmr-service",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "node hmr-service.js",
@@ -11,7 +11,7 @@
     "node": ">=6.2.1"
   },
   "dependencies": {
-    "hydra": "1.0.6",
+    "hydra": "1.2.7",
     "fwsp-config": "1.1.5"
   },
   "devDependencies": {

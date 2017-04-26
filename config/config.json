@@ -3,7 +3,7 @@
   "hydra": {
     "serviceName": "hmr-service",
     "serviceIP": "",
-    "servicePort": 0,
+    "servicePort": 40000,
     "serviceType": "tool",
     "serviceDescription": "Hydra Message Relay - a simple microservice which replies to WebSocket messages received via Hydra-router.",
     "redis": {
