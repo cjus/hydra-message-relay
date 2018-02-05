@@ -1,5 +1,4 @@
 {
-  "environment": "development",
   "hydra": {
     "serviceName": "hmr-service",
     "serviceIP": "",

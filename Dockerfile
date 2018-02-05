@@ -1,4 +1,4 @@
-FROM node:6.9.4-alpine
+FROM node:8.9.1-alpine
 MAINTAINER Carlos Justiniano cjus34@gmail.com
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

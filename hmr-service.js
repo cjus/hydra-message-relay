@@ -5,17 +5,19 @@
 */
 'use strict';
 
-/**
-* Load configuration file and initialize Hydra.
-*/
-let config = {};
 const hydra = require('hydra');
-hydra.init(`${__dirname}/config/config.json`, false)
-  .then((newConfig) => {
+let config = hydra.getConfigHelper();
+
+/**
+* Load configuration file and initialize hydraExpress app
+*/
+let main = async () => {
+  try
+  {
+    await config.init('./config/config.json');
+    let newConfig = await hydra.init(config.getObject(), false);
     config = newConfig;
-    return hydra.registerService();
-  })
-  .then((serviceInfo) => {
+    let serviceInfo = await hydra.registerService();
     let logEntry = `Started ${hydra.getServiceName()} (v.${hydra.getInstanceVersion()})`;
     console.log(logEntry);
     console.log(serviceInfo);
@@ -26,9 +28,12 @@ hydra.init(`${__dirname}/config/config.json`, false)
         }
       });
     });
-  })
-  .catch((err) => {
+  } catch (e) {
     console.log('err', err);
     hydra.shutdown();
     process.exit(-1);
-  });
+  }
+}
+
+main();
+
