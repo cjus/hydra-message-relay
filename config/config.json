@@ -6,7 +6,7 @@
     "serviceType": "tool",
     "serviceDescription": "Hydra Message Relay - a simple microservice which replies to WebSocket messages received via Hydra-router.",
     "redis": {
-      "url": "redis://127.0.0.1:6379/15"
+      "url": "redis://redis:6379/0"
     }
   }
 }
